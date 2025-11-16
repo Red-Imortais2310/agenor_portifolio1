@@ -226,7 +226,10 @@ body {
 /* ========================================
    Hero Section
    ======================================== */
-.hero {
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: -120px;  /* <CHANGE> subir mais no mobile para cobrir melhor */
   position: relative;
   height: 100vh;
   min-height: 600px;
@@ -234,7 +237,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-top: -100px;  /* <CHANGE> subir o hero para cobrir o header */
+}
 }
 
 .hero-canvas {
