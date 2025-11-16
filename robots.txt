@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agenor-portifolio1.vercel.app/sitemap.xml
