@@ -70,16 +70,10 @@ body {
   font-size: var(--font-size-base);
   overflow-x: hidden;
 }
-body {
-    padding-top: var(--header-height);
-}
 
 @media (max-width: 768px) {
-    body {
-        padding-top: var(--header-height-mobile) !important;
-    }
+  
 }
-
 /* Screen reader only text for accessibility */
 .sr-only {
   position: absolute;
