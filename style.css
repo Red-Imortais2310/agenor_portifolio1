@@ -234,6 +234,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-top: -80px;  /* <CHANGE> subir o hero para cobrir o header */
 }
 
 .hero-canvas {
