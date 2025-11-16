@@ -45,7 +45,7 @@
   --transition-slow: 500ms ease-in-out;
   
   /* Header */
-  --header-height: 64px;
+  --header-height: 60px;
   --header-height-mobile: 56px;
 }
 
@@ -204,6 +204,11 @@ body {
   }
 
   /* Hero section with increased height attached to header */
+  @media (max-width: 768px) {
+    #hero {
+        padding-top: var(--header-height-mobile); /* Usa 56px no mobile */
+    }
+}
   .hero {
     margin-top: 0;
     padding-top: 60px;
@@ -215,6 +220,7 @@ body {
     justify-content: center;
     overflow: hidden;
     margin-bottom: 100px;
+    padding-top: var(--header-height);
   }
 
   /* Reduce orbit size to fit screen */
