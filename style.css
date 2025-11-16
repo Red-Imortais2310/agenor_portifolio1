@@ -71,7 +71,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Screen reader only text */
+/* Screen reader only text for accessibility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -177,9 +177,8 @@ body {
   transition: var(--transition-fast);
 }
 
-/* Mobile Menu */
+/* Mobile Menu - Consolidated for proper mobile display */
 @media (max-width: 768px) {
-  /* <CHANGE> adicionar exibição do botão hamburger no mobile */
   .mobile-menu-btn {
     display: flex;
   }
@@ -189,7 +188,7 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    width: 100%;  /* <CHANGE> garantir que ocupa 100% da largura */
+    width: 100%;
     flex-direction: column;
     gap: var(--spacing-sm);
     background-color: var(--color-surface);
@@ -204,7 +203,21 @@ body {
     max-height: 300px;
   }
 
-  /* <CHANGE> reduzir tamanho da órbita e logos no mobile */
+  /* Hero section with increased height attached to header */
+  .hero {
+    margin-top: 0;
+    padding-top: 60px;
+    position: relative;
+    height: 160vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 100px;
+  }
+
+  /* Reduce orbit size to fit screen */
   .hero-images {
     width: 200px;
     height: 200px;
@@ -214,32 +227,72 @@ body {
     width: 40px;
     height: 40px;
     font-size: 18px;
-    transform: translateX(-50%) rotateY(0deg) translateZ(100px);  /* <CHANGE> reduzir de 150px para 100px */
+    transform: translateX(-50%) rotateY(0deg) translateZ(100px);
   }
 
   @keyframes orbitItem {
-    0% { transform: translateX(-50%) rotateZ(0deg) translateY(-100px) rotateZ(0deg); }  /* <CHANGE> reduzir de 150px para 100px */
-    100% { transform: translateX(-50%) rotateZ(360deg) translateY(-100px) rotateZ(-360deg); }  /* <CHANGE> reduzir de 150px para 100px */
+    0% { transform: translateX(-50%) rotateZ(0deg) translateY(-100px) rotateZ(0deg); }
+    100% { transform: translateX(-50%) rotateZ(360deg) translateY(-100px) rotateZ(-360deg); }
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .about,
+  .contact {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .projects {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .social-links {
+    gap: var(--spacing-md);
+  }
+
+  .social-link {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    flex-direction: column;
+  }
+
+  .social-link i {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 0 var(--spacing-md);
   }
 }
 
 /* ========================================
    Hero Section
    ======================================== */
-
-@media (max-width: 768px) {
-  .hero {
-    margin-top: -120px;
-    padding-top: 0;  /* <CHANGE> remover padding para hero subir mais */
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+
 .hero-canvas {
   position: absolute;
   top: 0;
@@ -284,7 +337,7 @@ body {
 }
 
 /* ========================================
-   Estilos para imagens de logotipos no hero
+   Styles for logo images in hero
    ======================================== */
 .tech-logo {
   width: 40px;
@@ -413,19 +466,6 @@ body {
   100% { transform: translateX(-50%) rotateZ(360deg) translateY(-150px) rotateZ(-360deg); }
 }
 
-@media (max-width: 768px) {
-  .hero-images {
-    width: 280px;
-    height: 280px;
-  }
-
-  .orbit-item {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-  }
-}
-
 /* ========================================
    About Section
    ======================================== */
@@ -552,9 +592,7 @@ body {
   margin-bottom: var(--spacing-sm);
 }
 
-/* ========================================
-   Estilos para imagens nos skills
-   ======================================== */
+/* Styles for skill logo images */
 .skill-icon {
   width: 40px;
   height: 40px;
@@ -567,13 +605,6 @@ body {
   font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--color-text);
-}
-
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
-  }
 }
 
 /* ========================================
@@ -667,9 +698,7 @@ body {
   gap: var(--spacing-sm);
 }
 
-/* ========================================
-   Estilos para cards de projetos com link wrapper
-   ======================================== */
+/* Styles for project cards with link wrapper */
 .project-link-wrapper {
   display: block;
   text-decoration: none;
@@ -879,59 +908,6 @@ body {
 /* ========================================
    Responsiveness
    ======================================== */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--spacing-md);
-  }
-
-  .hero-scroll {
-    display: none;
-  }
-
-  :root {
-    --font-size-3xl: 32px;
-    --font-size-2xl: 24px;
-    --spacing-3xl: 32px;
-    --spacing-2xl: 32px;
-  }
-
-  .about,
-  .contact {
-    padding: var(--spacing-2xl) 0;
-  }
-
-  .projects {
-    padding: var(--spacing-2xl) 0;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
-
-  .social-links {
-    gap: var(--spacing-md);
-  }
-
-  .social-link {
-    padding: var(--spacing-md);
-    font-size: var(--font-size-sm);
-    flex-direction: column;
-  }
-
-  .social-link i {
-    font-size: 24px;
-  }
-}
-
 @media (max-width: 480px) {
   :root {
     --spacing-lg: 16px;
