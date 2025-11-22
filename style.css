@@ -745,76 +745,180 @@ body {
 /* ========================================
    Contact Section
    ======================================== */
-.contact {
-  padding: var(--spacing-3xl) 0;
-  background-color: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-}
-
-.contact-subtitle {
-  text-align: center;
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-2xl);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto var(--spacing-3xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.form-group label {
-  font-weight: 600;
-  color: var(--color-text);
-}
-
-.form-group input,
-.form-group textarea {
-  padding: var(--spacing-md);
-  background-color: var(--color-primary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  color: var(--color-text);
-  font-family: var(--font-family-sans);
-  font-size: var(--font-size-base);
-  transition: border-color var(--transition-fast);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.submit-btn {
-  padding: var(--spacing-md) var(--spacing-2xl);
-  background-color: var(--color-accent);
-  color: var(--color-background);
-  border: none;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  font-size: var(--font-size-base);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.submit-btn:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-2px);
-}
+   .contact {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    }
+    
+    .contact-subtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+    /* Layout Principal: GRID para 2 COLUNAS */
+    .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Imagem/Info (1) e Formulário (1.2) */
+    gap: var(--spacing-3xl);
+    align-items: center; 
+    }
+    
+    /* Coluna da Esquerda: FLEX para alinhamento vertical */
+    .contact-details-and-image {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl); 
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; 
+    }
+    
+    /* Estilo do Wrapper da Imagem */
+    .contact-image-wrapper {
+    max-width: 300px; /* Controla o tamanho máximo da coluna da imagem */
+    width: 100%;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-primary-light); /* Fundo sutil */
+    border: 1px solid var(--color-border);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+    text-align: center;
+    }
+    
+    .contact-profile-image {
+    /* CONTROLE DO TAMANHO DA IMAGEM */
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Limite explícito de altura */
+    object-fit: cover;
+    border-radius: 50%; /* Circular */
+    margin-bottom: var(--spacing-sm);
+    border: 3px solid var(--color-accent);
+    }
+    
+    .contact-quote {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    font-size: var(--font-size-sm);
+    }
+    
+    /* Bloco de Informações de Contato */
+    .contact-info {
+    text-align: center;
+    margin-top: 0; 
+    padding-top: 0; 
+    border-top: none; 
+    width: 100%;
+    }
+    
+    .contact-label {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    display: block;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    }
+    
+    /* Estilos para os links sociais */
+    .social-links {
+    display: flex;
+    flex-direction: column; /* Links em coluna no desktop */
+    justify-content: center;
+    gap: var(--spacing-md);
+    }
+    
+    .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: var(--spacing-sm);
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-primary-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    }
+    
+    .social-link:hover {
+    background-color: var(--color-accent-hover);
+    color: var(--color-background);
+    transform: translateY(-2px);
+    border-color: var(--color-accent-hover);
+    }
+    
+    .social-link i {
+    font-size: var(--font-size-lg);
+    }
+    
+    /* Estilos do Formulário (Ocupa a segunda coluna) */
+    .contact-form {
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin: 0; 
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    }
+    
+    .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    }
+    
+    .form-group label {
+    font-weight: 600;
+    color: var(--color-text);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+    padding: var(--spacing-md);
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    font-family: var(--font-family-sans);
+     font-size: var(--font-size-base);
+    transition: border-color var(--transition-fast);
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+     outline: none;
+     border-color: var(--color-accent);
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    .submit-btn {
+     padding: var(--spacing-md) var(--spacing-2xl);
+     background-color: var(--color-accent);
+     color: var(--color-background);
+     border: none;
+     border-radius: var(--radius-lg);
+     font-weight: 600;
+     font-size: var(--font-size-base);
+     cursor: pointer;
+     transition: all var(--transition-fast);
+    }
+    
+    .submit-btn:hover {
+     background-color: var(--color-accent-hover);
+     transform: translateY(-2px);
+    }
 
 /* ========================================
    Contact Info Section
