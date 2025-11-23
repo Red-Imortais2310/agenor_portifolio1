@@ -509,7 +509,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     
-    animation: backgroundSlide 20s infinite ease-in-out;
+    animation: backgroundSlide 15s infinite ease-in-out;
     
     /* Sobreposição escura para garantir a legibilidade do texto */
     background-color: rgba(2, 6, 23, 0.9);
